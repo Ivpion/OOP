@@ -1,10 +1,7 @@
 package week6_command_line.controller;
 
 import week6_command_line.exeptions.CommandNotFoundException;
-import week6_command_line.model.Exit;
-import week6_command_line.model.ICommand;
-import week6_command_line.model.Ls;
-import week6_command_line.model.Pwd;
+import week6_command_line.model.*;
 
 /**
  * Created by ivan on 16.07.17.
@@ -19,6 +16,8 @@ public class CommandFactory {
             case "ls": command = new Ls();
             break;
             case "exit": command = new Exit();
+            break;
+            case "cd": command = new Cd();
             break;
             default: throw new CommandNotFoundException();
 
