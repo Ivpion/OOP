@@ -18,7 +18,7 @@ public class Ls extends ACommand {
         String[] filesList;
         // take current working directory
         if (commandArgs.size() == 0) {
-            filesList = CommandLineController.currentDir.list();
+            filesList = CommandLineController.getCurrentDir().list();
             result.append(getFileListAsString(filesList));
         } else {
             try {

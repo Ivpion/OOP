@@ -10,7 +10,7 @@ public class Pwd extends ACommand {
 
     @Override
     public String execute() {
-        return new File("").getAbsolutePath();
+        return new File(".").getAbsolutePath();
     }
 
 

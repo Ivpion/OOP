@@ -19,6 +19,10 @@ public class CommandFactory {
             break;
             case "cd": command = new Cd();
             break;
+            case "man": command =new Man();
+            break;
+            case "cat": command = new Cat();
+            break;
             default: throw new CommandNotFoundException();
 
         }
