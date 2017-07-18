@@ -8,7 +8,6 @@ import java.io.*;
  * Created by ivan on 18.07.17.
  */
 public class Cat extends ACommand {
-
     @Override
     public String execute() {
         String[] s = CommandLineController.getCurrentDir().list();
@@ -18,7 +17,13 @@ public class Cat extends ACommand {
         if (s == null) return "No file";
         for (int i = 0; i < s.length; i++) {
             if (commandArgs.contains(s[i]) && s[i].contains(".")) {
-                File path = new File((CommandLineController.getCurrentDir().getPath() + "/" + s[i]).substring(1));
+
+                String path;
+                if (CommandLineController.getCurrentDir().getPath().equals(".")){
+                    path = ((CommandLineController.getCurrentDir().getPath() + s[i]).substring(1));
+                } else {
+                    path = ((CommandLineController.getCurrentDir().getPath() + "/" + s[i]).substring(2));
+                }
                 BufferedReader reader = null;
                 try {
                     reader = new BufferedReader(new InputStreamReader(new FileInputStream(path)));
