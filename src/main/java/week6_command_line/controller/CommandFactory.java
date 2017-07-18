@@ -23,6 +23,8 @@ public class CommandFactory {
             break;
             case "cat": command = new Cat();
             break;
+            case "touch": command = new Touch();
+            break;
             default: throw new CommandNotFoundException();
 
         }
